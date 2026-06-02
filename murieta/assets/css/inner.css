@@ -1,0 +1,154 @@
+/* ===== INNER PAGES SHARED STYLES ===== */
+
+/* BIO PAGE */
+.bio-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; padding: 80px var(--gap); align-items: start; }
+.bio-sticky { position: sticky; top: 100px; }
+.bio-photo-main { aspect-ratio: 3/4; margin-bottom: 16px; }
+.bio-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.bio-photo-small { aspect-ratio: 1; }
+.bio-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px,3vw,40px); font-weight: 700;
+  margin: 48px 0 20px; color: var(--blanco); line-height: 1.2;
+}
+.bio-content h2:first-child { margin-top: 0; }
+.bio-content h2 em { font-style: italic; color: var(--naranja); }
+.bio-p { font-size: 16px; line-height: 1.95; color: rgba(240,237,232,.65); margin-bottom: 20px; }
+.bio-p strong { color: var(--blanco); font-weight: 500; }
+.bio-quote-block {
+  border-left: 3px solid var(--purpura); padding: 20px 24px;
+  margin: 36px 0; background: rgba(107,58,154,.08);
+}
+.bio-quote-block p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; line-height: 1.6; margin-bottom: 12px; }
+.bio-quote-block cite { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gris-claro); }
+.bio-timeline { margin: 48px 0; }
+.timeline-item { display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid rgba(240,237,232,.07); position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: 76px; top: 0; bottom: 0; width: 1px; background: rgba(107,58,154,.3); }
+.timeline-year { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--purpura-claro); line-height: 1; padding-top: 4px; }
+.timeline-text { font-size: 14px; line-height: 1.85; color: rgba(240,237,232,.6); padding-left: 20px; }
+.timeline-text strong { color: var(--naranja); font-weight: 500; }
+.collab-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.collab-tag { font-size: 10px; letter-spacing: 2px; color: rgba(240,237,232,.5); border: 1px solid rgba(240,237,232,.12); padding: 6px 12px; }
+
+/* MUSIC PAGE */
+.musica-section { padding: 80px var(--gap); }
+.musica-section + .musica-section { padding-top: 0; }
+.musica-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
+.section-link { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--purpura-claro); text-decoration: none; border-bottom: 1px solid var(--purpura); padding-bottom: 4px; transition: color .3s, border-color .3s; }
+.section-link:hover { color: var(--naranja); border-color: var(--naranja); }
+.discos-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.disco-card { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--gris-medio); cursor: pointer; }
+.disco-card:hover .disco-overlay { opacity: 1; }
+.disco-card:hover .disco-inner { transform: scale(1.06); }
+.disco-inner { position: absolute; inset: 0; transition: transform .6s ease; display: flex; align-items: center; justify-content: center; }
+.dp1 { background: linear-gradient(135deg,#180a30,#4a1580); }
+.dp2 { background: linear-gradient(135deg,#280d00,#782800); }
+.dp3 { background: linear-gradient(135deg,#100018,#3a0870); }
+.dp4 { background: linear-gradient(135deg,#200800,#6a2200); }
+.dp5 { background: linear-gradient(135deg,#080808,#252525); }
+.dp6 { background: linear-gradient(135deg,#0a1520,#183040); }
+.dp7 { background: linear-gradient(135deg,#150028,#5a1590); }
+.dp8 { background: linear-gradient(135deg,#1a0600,#602000); }
+.disco-vinyl { width: 62%; height: 62%; border-radius: 50%; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; }
+.disco-vinyl::after { content: ''; width: 22%; height: 22%; border-radius: 50%; background: rgba(255,255,255,.12); display: block; }
+.disco-overlay { position: absolute; inset: 0; background: rgba(8,8,8,.9); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 22px; opacity: 0; transition: opacity .4s; z-index: 2; }
+.disco-yr { font-size: 9px; letter-spacing: 3px; color: var(--naranja); text-transform: uppercase; margin-bottom: 6px; }
+.disco-nm { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+.disco-tp { font-size: 10px; color: var(--gris-claro); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.disco-play { width: 38px; height: 38px; border: 1px solid var(--naranja); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--naranja); text-decoration: none; font-size: 12px; padding-left: 3px; transition: all .3s; }
+.disco-play:hover { background: var(--naranja); color: var(--negro); }
+
+/* VIDEO GALLERY */
+.videos-section { padding: 80px var(--gap); background: var(--gris-oscuro); }
+.videos-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
+.video-card { position: relative; background: #000; overflow: hidden; }
+.video-card .yt-thumb-wrapper { aspect-ratio: 16/9; }
+.video-card-info { padding: 20px 0; }
+.video-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.video-card-desc { font-size: 12px; color: var(--gris-claro); letter-spacing: 1px; }
+.spotify-full-section { padding: 80px var(--gap); }
+.spotify-full-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.spotify-embed-full iframe { border-radius: 8px; }
+
+/* SHOWS PAGE */
+.shows-section { padding: 80px var(--gap); }
+.shows-list { display: flex; flex-direction: column; }
+.show-item { display: grid; grid-template-columns: 110px 1fr 1fr auto; align-items: center; gap: 36px; padding: 26px 0; border-bottom: 1px solid rgba(240,237,232,.07); position: relative; transition: background .3s; }
+.show-item:hover { background: rgba(107,58,154,.04); margin: 0 -52px; padding-left: 52px; padding-right: 52px; }
+.show-date { font-family: 'Bebas Neue', sans-serif; font-size: 34px; letter-spacing: 2px; color: var(--purpura-claro); line-height: 1; }
+.show-date span { display: block; font-size: 10px; letter-spacing: 3px; color: var(--gris-claro); font-family: 'DM Sans', sans-serif; font-weight: 300; text-transform: uppercase; }
+.show-venue { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; }
+.show-city { font-size: 11px; color: var(--gris-claro); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+.show-type { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--naranja); background: rgba(224,94,0,.09); border: 1px solid rgba(224,94,0,.28); padding: 6px 12px; display: inline-block; white-space: nowrap; }
+.show-ticket { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--blanco); text-decoration: none; border: 1px solid rgba(240,237,232,.18); padding: 10px 18px; transition: all .3s; white-space: nowrap; }
+.show-ticket:hover { border-color: var(--purpura); color: var(--purpura-claro); }
+.escenarios-section { padding: 80px var(--gap); background: var(--gris-oscuro); }
+.escenarios-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 48px; }
+.escenario-card { background: var(--gris-medio); padding: 28px 24px; border-top: 2px solid transparent; transition: border-color .3s; }
+.escenario-card:hover { border-color: var(--purpura); }
+.escenario-pais { font-size: 10px; color: var(--naranja); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.escenario-list { font-size: 13px; line-height: 1.9; color: rgba(240,237,232,.55); }
+
+/* BANDA PAGE */
+.banda-section { padding: 80px var(--gap); }
+.banda-mauro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid rgba(240,237,232,.08); }
+.banda-mauro-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.banda-mauro-photo-main { grid-column: 1/-1; aspect-ratio: 16/9; }
+.banda-mauro-photo-sm { aspect-ratio: 1; }
+.banda-mauro-title { font-family: 'Playfair Display', serif; font-size: clamp(32px,3.5vw,48px); font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
+.banda-mauro-title em { font-style: italic; color: var(--naranja); }
+.banda-role-main { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--purpura-claro); margin-bottom: 28px; display: block; }
+.banda-members-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.banda-member-card { background: var(--gris-medio); padding: 36px 28px; border-top: 2px solid transparent; transition: border-color .3s, background .3s; }
+.banda-member-card:hover { border-color: var(--purpura); background: #202020; }
+.member-photo { aspect-ratio: 1; margin-bottom: 20px; }
+.member-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.member-role { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--naranja); margin-bottom: 16px; display: block; }
+.member-bio { font-size: 13px; line-height: 1.85; color: rgba(240,237,232,.55); }
+.member-highlights { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.highlight-tag { font-size: 9px; letter-spacing: 1px; color: var(--purpura-claro); border: 1px solid rgba(155,92,192,.3); padding: 4px 10px; }
+
+/* CONTACTO PAGE */
+.contacto-section { padding: 80px var(--gap); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.contacto-title { font-family: 'Playfair Display', serif; font-size: clamp(34px,3.8vw,52px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+.contacto-title em { font-style: italic; color: var(--naranja); }
+.contacto-desc { font-size: 15px; line-height: 1.9; color: rgba(240,237,232,.58); margin-bottom: 36px; }
+.contacto-mgmt { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1px solid rgba(240,237,232,.09); margin-bottom: 14px; transition: border-color .3s; }
+.contacto-mgmt:hover { border-color: rgba(107,58,154,.4); }
+.mgmt-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mgmt-info strong { display: block; font-size: 13px; margin-bottom: 2px; }
+.mgmt-info span { font-size: 10px; color: var(--gris-claro); letter-spacing: 2px; text-transform: uppercase; }
+.mgmt-info a { color: var(--purpura-claro); text-decoration: none; }
+.dossier-box { margin-top: 32px; padding: 24px; border: 1px solid rgba(107,58,154,.3); background: rgba(107,58,154,.06); }
+.dossier-box p { font-size: 13px; color: rgba(240,237,232,.6); margin-bottom: 16px; line-height: 1.7; }
+.contacto-form { display: flex; flex-direction: column; gap: 14px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 7px; }
+.form-group label { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--gris-claro); }
+.form-group input, .form-group select, .form-group textarea {
+  background: rgba(240,237,232,.04); border: 1px solid rgba(240,237,232,.1);
+  color: var(--blanco); padding: 13px 15px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
+  outline: none; transition: border-color .3s; -webkit-appearance: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--purpura); }
+.form-group select option { background: #111; }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-submit { background: var(--naranja); color: var(--negro); border: none; padding: 17px 38px; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: background .3s, transform .3s; align-self: flex-start; }
+.form-submit:hover { background: var(--naranja-claro); transform: translateY(-2px); }
+
+/* RESPONSIVE INNER */
+@media (max-width: 900px) {
+  .bio-grid { grid-template-columns: 1fr; }
+  .bio-sticky { position: static; }
+  .discos-grid { grid-template-columns: repeat(2,1fr); }
+  .videos-grid { grid-template-columns: 1fr; }
+  .spotify-full-inner { grid-template-columns: 1fr; }
+  .show-item { grid-template-columns: 80px 1fr; gap: 16px; }
+  .show-type, .show-ticket { display: none; }
+  .escenarios-grid { grid-template-columns: repeat(2,1fr); }
+  .banda-mauro { grid-template-columns: 1fr; }
+  .banda-members-grid { grid-template-columns: 1fr; }
+  .contacto-section { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
